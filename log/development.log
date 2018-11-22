@@ -1,0 +1,275 @@
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmails (20180301125845)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "emails" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "object" varchar, "body" text, "read" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180301125845"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-22 17:50:45.664353"], ["updated_at", "2018-11-22 17:50:45.664353"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 1"], ["body", "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat quam bibendum semper ultrices. Etiam condimentum sed dolor sed rutrum. Pellentesque sed condimentum tellus. Etiam molestie libero vitae metus semper dapibus. Pellentesque malesuada, urna non accumsan euismod, turpis tellus blandit nulla, id hendrerit mi mauris sed lectus. Nunc bibendum pretium ipsum. Aenean eu mi commodo, commodo metus et, mattis ligula. Donec a placerat dui. Suspendisse bibendum sed elit sit amet hendrerit. Phasellus sodales pretium ullamcorper. Vestibulum placerat finibus lorem laoreet lobortis. Aliquam sed fermentum velit. Phasellus pellentesque blandit molestie. Praesent dapibus sem non fermentum mollis.\n\nVivamus neque lorem, pulvinar vitae venenatis consequat, consectetur eget nibh. Proin sed enim purus. Cras eget cursus nibh, sit amet efficitur ex. Fusce sapien libero, imperdiet ut finibus dictum, sollicitudin ut erat. Proin vel mauris quam. Duis ultricies nisi in luctus vestibulum. Etiam ornare interdum libero.\n\nFusce rhoncus porttitor ligula, quis dignissim dolor eleifend et. Aliquam erat volutpat. Duis id vestibulum lacus. Proin aliquam ornare ultrices. Morbi vulputate hendrerit sapien quis lacinia. Suspendisse id facilisis leo. Nunc iaculis pulvinar metus, vitae viverra est. Nunc justo ex, volutpat iaculis eros id, interdum volutpat ipsum. Maecenas diam urna, cursus non diam et, lacinia mollis lorem. Etiam vel quam non arcu cursus condimentum nec non ipsum.\n\nProin ornare odio quis aliquet venenatis. In sit amet convallis ipsum. Cras arcu ligula, euismod ac tellus non, rhoncus ornare leo. Donec enim sem, consequat a erat vel, euismod pellentesque ligula. Sed eu hendrerit diam, sed sagittis lectus. Aliquam erat volutpat. Nulla vitae mi aliquet, ultricies neque sed, fringilla nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis at rhoncus tortor. Cras lectus enim, interdum sed iaculis eget, hendrerit id nulla. Etiam in sem laoreet, hendrerit mi sed, posuere elit.\n\nVestibulum convallis semper consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce commodo magna urna, eu pulvinar massa luctus vitae. Etiam euismod odio ac lacus dictum pellentesque. Proin imperdiet arcu in turpis fringilla efficitur. Curabitur quis elit nec leo luctus sollicitudin. Duis a tortor sed turpis ultrices ornare. Integer condimentum ante vitae enim mollis porttitor. Duis turpis enim, pulvinar at lorem rutrum, laoreet luctus lacus. Duis vitae sapien ultrices, suscipit nisi nec, porttitor sem. Nulla vitae lobortis libero. Donec tincidunt, neque in mattis sagittis, mi ante maximus felis, id vehicula urna nulla eu ex. Nullam dapibus a eros in feugiat. Sed sodales eros eget dui sagittis tempus. Etiam et fermentum lorem. Ut eu tincidunt tellus. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.642560"], ["updated_at", "2018-11-22 17:50:50.642560"]]
+  [1m[35m (32.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 2"], ["body", "\n\nPraesent interdum, arcu at dictum interdum, ipsum velit porta tellus, ac malesuada ante erat et velit. Pellentesque a convallis mi. Quisque iaculis fermentum suscipit. In ut lectus pretium, varius nisl vitae, suscipit dui. Fusce eros est, viverra id leo at, finibus tempus erat. Pellentesque ut imperdiet nulla. Cras dictum erat et augue sodales, nec auctor arcu ultrices. Vivamus ac commodo leo. Nam urna massa, facilisis eu ipsum ut, finibus facilisis leo. Cras imperdiet metus eu erat pharetra tincidunt.\n\nIn fringilla faucibus ex, accumsan aliquet est pretium ut. Etiam nunc nisl, dictum vel nibh a, dignissim rhoncus lacus. Ut lobortis sodales mauris elementum varius. In condimentum eros id metus fermentum, et condimentum nibh dapibus. Ut semper, justo vitae mollis maximus, ligula nisi tincidunt nulla, sit amet mollis justo urna eu mauris. Morbi tincidunt, quam quis tempor dignissim, mi dolor convallis neque, accumsan ullamcorper metus purus non mauris. Vivamus ipsum est, efficitur non volutpat non, viverra in odio. Curabitur id suscipit leo.\n\nAenean nec metus nec velit mollis vulputate non at tellus. Etiam vitae cursus magna, non facilisis mauris. Duis non nisi luctus tellus venenatis sagittis eu vitae ex. Sed ut vehicula eros. Proin in aliquet orci, sed tincidunt felis. Cras vel pellentesque libero, eget aliquam tortor. Quisque porta scelerisque diam in posuere. In sit amet urna ligula. Nunc tempus orci ullamcorper, facilisis augue eu, imperdiet ex. Nullam hendrerit ex purus, auctor convallis augue blandit suscipit. Mauris ac venenatis augue. Phasellus faucibus rhoncus quam sed ullamcorper. Ut ornare fringilla felis, non rutrum leo lacinia vitae. In hac habitasse platea dictumst.\n\nProin gravida posuere leo ut bibendum. Sed egestas, neque quis lobortis condimentum, diam turpis rutrum dui, nec laoreet dolor urna nec purus. Nam ac suscipit lectus, non sodales nunc. Vestibulum vel augue diam. Aenean est nibh, volutpat sit amet posuere a, faucibus eget libero. Proin facilisis lacus nulla, ultricies suscipit tellus mattis ullamcorper. Quisque in orci vel quam bibendum commodo eu in elit. Etiam ut dui vitae ex euismod tristique. Nunc at lacus augue. Sed facilisis dictum erat non vestibulum. Aliquam vel sodales lectus. In et ligula a sem posuere iaculis vitae eget turpis. Suspendisse velit massa, placerat non scelerisque nec, hendrerit non eros. Nunc lorem risus, aliquam ac urna in, pulvinar tristique ante. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.676653"], ["updated_at", "2018-11-22 17:50:50.676653"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 3"], ["body", "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat quam bibendum semper ultrices. Etiam condimentum sed dolor sed rutrum. Pellentesque sed condimentum tellus. Etiam molestie libero vitae metus semper dapibus. Pellentesque malesuada, urna non accumsan euismod, turpis tellus blandit nulla, id hendrerit mi mauris sed lectus. Nunc bibendum pretium ipsum. Aenean eu mi commodo, commodo metus et, mattis ligula. Donec a placerat dui. Suspendisse bibendum sed elit sit amet hendrerit. Phasellus sodales pretium ullamcorper. Vestibulum placerat finibus lorem laoreet lobortis. Aliquam sed fermentum velit. Phasellus pellentesque blandit molestie. Praesent dapibus sem non fermentum mollis.\n\nVivamus neque lorem, pulvinar vitae venenatis consequat, consectetur eget nibh. Proin sed enim purus. Cras eget cursus nibh, sit amet efficitur ex. Fusce sapien libero, imperdiet ut finibus dictum, sollicitudin ut erat. Proin vel mauris quam. Duis ultricies nisi in luctus vestibulum. Etiam ornare interdum libero.\n\nFusce rhoncus porttitor ligula, quis dignissim dolor eleifend et. Aliquam erat volutpat. Duis id vestibulum lacus. Proin aliquam ornare ultrices. Morbi vulputate hendrerit sapien quis lacinia. Suspendisse id facilisis leo. Nunc iaculis pulvinar metus, vitae viverra est. Nunc justo ex, volutpat iaculis eros id, interdum volutpat ipsum. Maecenas diam urna, cursus non diam et, lacinia mollis lorem. Etiam vel quam non arcu cursus condimentum nec non ipsum.\n\nProin ornare odio quis aliquet venenatis. In sit amet convallis ipsum. Cras arcu ligula, euismod ac tellus non, rhoncus ornare leo. Donec enim sem, consequat a erat vel, euismod pellentesque ligula. Sed eu hendrerit diam, sed sagittis lectus. Aliquam erat volutpat. Nulla vitae mi aliquet, ultricies neque sed, fringilla nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis at rhoncus tortor. Cras lectus enim, interdum sed iaculis eget, hendrerit id nulla. Etiam in sem laoreet, hendrerit mi sed, posuere elit.\n\nVestibulum convallis semper consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce commodo magna urna, eu pulvinar massa luctus vitae. Etiam euismod odio ac lacus dictum pellentesque. Proin imperdiet arcu in turpis fringilla efficitur. Curabitur quis elit nec leo luctus sollicitudin. Duis a tortor sed turpis ultrices ornare. Integer condimentum ante vitae enim mollis porttitor. Duis turpis enim, pulvinar at lorem rutrum, laoreet luctus lacus. Duis vitae sapien ultrices, suscipit nisi nec, porttitor sem. Nulla vitae lobortis libero. Donec tincidunt, neque in mattis sagittis, mi ante maximus felis, id vehicula urna nulla eu ex. Nullam dapibus a eros in feugiat. Sed sodales eros eget dui sagittis tempus. Etiam et fermentum lorem. Ut eu tincidunt tellus. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.685422"], ["updated_at", "2018-11-22 17:50:50.685422"]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 4"], ["body", "\n\nPraesent interdum, arcu at dictum interdum, ipsum velit porta tellus, ac malesuada ante erat et velit. Pellentesque a convallis mi. Quisque iaculis fermentum suscipit. In ut lectus pretium, varius nisl vitae, suscipit dui. Fusce eros est, viverra id leo at, finibus tempus erat. Pellentesque ut imperdiet nulla. Cras dictum erat et augue sodales, nec auctor arcu ultrices. Vivamus ac commodo leo. Nam urna massa, facilisis eu ipsum ut, finibus facilisis leo. Cras imperdiet metus eu erat pharetra tincidunt.\n\nIn fringilla faucibus ex, accumsan aliquet est pretium ut. Etiam nunc nisl, dictum vel nibh a, dignissim rhoncus lacus. Ut lobortis sodales mauris elementum varius. In condimentum eros id metus fermentum, et condimentum nibh dapibus. Ut semper, justo vitae mollis maximus, ligula nisi tincidunt nulla, sit amet mollis justo urna eu mauris. Morbi tincidunt, quam quis tempor dignissim, mi dolor convallis neque, accumsan ullamcorper metus purus non mauris. Vivamus ipsum est, efficitur non volutpat non, viverra in odio. Curabitur id suscipit leo.\n\nAenean nec metus nec velit mollis vulputate non at tellus. Etiam vitae cursus magna, non facilisis mauris. Duis non nisi luctus tellus venenatis sagittis eu vitae ex. Sed ut vehicula eros. Proin in aliquet orci, sed tincidunt felis. Cras vel pellentesque libero, eget aliquam tortor. Quisque porta scelerisque diam in posuere. In sit amet urna ligula. Nunc tempus orci ullamcorper, facilisis augue eu, imperdiet ex. Nullam hendrerit ex purus, auctor convallis augue blandit suscipit. Mauris ac venenatis augue. Phasellus faucibus rhoncus quam sed ullamcorper. Ut ornare fringilla felis, non rutrum leo lacinia vitae. In hac habitasse platea dictumst.\n\nProin gravida posuere leo ut bibendum. Sed egestas, neque quis lobortis condimentum, diam turpis rutrum dui, nec laoreet dolor urna nec purus. Nam ac suscipit lectus, non sodales nunc. Vestibulum vel augue diam. Aenean est nibh, volutpat sit amet posuere a, faucibus eget libero. Proin facilisis lacus nulla, ultricies suscipit tellus mattis ullamcorper. Quisque in orci vel quam bibendum commodo eu in elit. Etiam ut dui vitae ex euismod tristique. Nunc at lacus augue. Sed facilisis dictum erat non vestibulum. Aliquam vel sodales lectus. In et ligula a sem posuere iaculis vitae eget turpis. Suspendisse velit massa, placerat non scelerisque nec, hendrerit non eros. Nunc lorem risus, aliquam ac urna in, pulvinar tristique ante. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.695949"], ["updated_at", "2018-11-22 17:50:50.695949"]]
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 5"], ["body", "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat quam bibendum semper ultrices. Etiam condimentum sed dolor sed rutrum. Pellentesque sed condimentum tellus. Etiam molestie libero vitae metus semper dapibus. Pellentesque malesuada, urna non accumsan euismod, turpis tellus blandit nulla, id hendrerit mi mauris sed lectus. Nunc bibendum pretium ipsum. Aenean eu mi commodo, commodo metus et, mattis ligula. Donec a placerat dui. Suspendisse bibendum sed elit sit amet hendrerit. Phasellus sodales pretium ullamcorper. Vestibulum placerat finibus lorem laoreet lobortis. Aliquam sed fermentum velit. Phasellus pellentesque blandit molestie. Praesent dapibus sem non fermentum mollis.\n\nVivamus neque lorem, pulvinar vitae venenatis consequat, consectetur eget nibh. Proin sed enim purus. Cras eget cursus nibh, sit amet efficitur ex. Fusce sapien libero, imperdiet ut finibus dictum, sollicitudin ut erat. Proin vel mauris quam. Duis ultricies nisi in luctus vestibulum. Etiam ornare interdum libero.\n\nFusce rhoncus porttitor ligula, quis dignissim dolor eleifend et. Aliquam erat volutpat. Duis id vestibulum lacus. Proin aliquam ornare ultrices. Morbi vulputate hendrerit sapien quis lacinia. Suspendisse id facilisis leo. Nunc iaculis pulvinar metus, vitae viverra est. Nunc justo ex, volutpat iaculis eros id, interdum volutpat ipsum. Maecenas diam urna, cursus non diam et, lacinia mollis lorem. Etiam vel quam non arcu cursus condimentum nec non ipsum.\n\nProin ornare odio quis aliquet venenatis. In sit amet convallis ipsum. Cras arcu ligula, euismod ac tellus non, rhoncus ornare leo. Donec enim sem, consequat a erat vel, euismod pellentesque ligula. Sed eu hendrerit diam, sed sagittis lectus. Aliquam erat volutpat. Nulla vitae mi aliquet, ultricies neque sed, fringilla nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis at rhoncus tortor. Cras lectus enim, interdum sed iaculis eget, hendrerit id nulla. Etiam in sem laoreet, hendrerit mi sed, posuere elit.\n\nVestibulum convallis semper consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce commodo magna urna, eu pulvinar massa luctus vitae. Etiam euismod odio ac lacus dictum pellentesque. Proin imperdiet arcu in turpis fringilla efficitur. Curabitur quis elit nec leo luctus sollicitudin. Duis a tortor sed turpis ultrices ornare. Integer condimentum ante vitae enim mollis porttitor. Duis turpis enim, pulvinar at lorem rutrum, laoreet luctus lacus. Duis vitae sapien ultrices, suscipit nisi nec, porttitor sem. Nulla vitae lobortis libero. Donec tincidunt, neque in mattis sagittis, mi ante maximus felis, id vehicula urna nulla eu ex. Nullam dapibus a eros in feugiat. Sed sodales eros eget dui sagittis tempus. Etiam et fermentum lorem. Ut eu tincidunt tellus. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.708655"], ["updated_at", "2018-11-22 17:50:50.708655"]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 6"], ["body", "\n\nPraesent interdum, arcu at dictum interdum, ipsum velit porta tellus, ac malesuada ante erat et velit. Pellentesque a convallis mi. Quisque iaculis fermentum suscipit. In ut lectus pretium, varius nisl vitae, suscipit dui. Fusce eros est, viverra id leo at, finibus tempus erat. Pellentesque ut imperdiet nulla. Cras dictum erat et augue sodales, nec auctor arcu ultrices. Vivamus ac commodo leo. Nam urna massa, facilisis eu ipsum ut, finibus facilisis leo. Cras imperdiet metus eu erat pharetra tincidunt.\n\nIn fringilla faucibus ex, accumsan aliquet est pretium ut. Etiam nunc nisl, dictum vel nibh a, dignissim rhoncus lacus. Ut lobortis sodales mauris elementum varius. In condimentum eros id metus fermentum, et condimentum nibh dapibus. Ut semper, justo vitae mollis maximus, ligula nisi tincidunt nulla, sit amet mollis justo urna eu mauris. Morbi tincidunt, quam quis tempor dignissim, mi dolor convallis neque, accumsan ullamcorper metus purus non mauris. Vivamus ipsum est, efficitur non volutpat non, viverra in odio. Curabitur id suscipit leo.\n\nAenean nec metus nec velit mollis vulputate non at tellus. Etiam vitae cursus magna, non facilisis mauris. Duis non nisi luctus tellus venenatis sagittis eu vitae ex. Sed ut vehicula eros. Proin in aliquet orci, sed tincidunt felis. Cras vel pellentesque libero, eget aliquam tortor. Quisque porta scelerisque diam in posuere. In sit amet urna ligula. Nunc tempus orci ullamcorper, facilisis augue eu, imperdiet ex. Nullam hendrerit ex purus, auctor convallis augue blandit suscipit. Mauris ac venenatis augue. Phasellus faucibus rhoncus quam sed ullamcorper. Ut ornare fringilla felis, non rutrum leo lacinia vitae. In hac habitasse platea dictumst.\n\nProin gravida posuere leo ut bibendum. Sed egestas, neque quis lobortis condimentum, diam turpis rutrum dui, nec laoreet dolor urna nec purus. Nam ac suscipit lectus, non sodales nunc. Vestibulum vel augue diam. Aenean est nibh, volutpat sit amet posuere a, faucibus eget libero. Proin facilisis lacus nulla, ultricies suscipit tellus mattis ullamcorper. Quisque in orci vel quam bibendum commodo eu in elit. Etiam ut dui vitae ex euismod tristique. Nunc at lacus augue. Sed facilisis dictum erat non vestibulum. Aliquam vel sodales lectus. In et ligula a sem posuere iaculis vitae eget turpis. Suspendisse velit massa, placerat non scelerisque nec, hendrerit non eros. Nunc lorem risus, aliquam ac urna in, pulvinar tristique ante. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.720402"], ["updated_at", "2018-11-22 17:50:50.720402"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 7"], ["body", "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat quam bibendum semper ultrices. Etiam condimentum sed dolor sed rutrum. Pellentesque sed condimentum tellus. Etiam molestie libero vitae metus semper dapibus. Pellentesque malesuada, urna non accumsan euismod, turpis tellus blandit nulla, id hendrerit mi mauris sed lectus. Nunc bibendum pretium ipsum. Aenean eu mi commodo, commodo metus et, mattis ligula. Donec a placerat dui. Suspendisse bibendum sed elit sit amet hendrerit. Phasellus sodales pretium ullamcorper. Vestibulum placerat finibus lorem laoreet lobortis. Aliquam sed fermentum velit. Phasellus pellentesque blandit molestie. Praesent dapibus sem non fermentum mollis.\n\nVivamus neque lorem, pulvinar vitae venenatis consequat, consectetur eget nibh. Proin sed enim purus. Cras eget cursus nibh, sit amet efficitur ex. Fusce sapien libero, imperdiet ut finibus dictum, sollicitudin ut erat. Proin vel mauris quam. Duis ultricies nisi in luctus vestibulum. Etiam ornare interdum libero.\n\nFusce rhoncus porttitor ligula, quis dignissim dolor eleifend et. Aliquam erat volutpat. Duis id vestibulum lacus. Proin aliquam ornare ultrices. Morbi vulputate hendrerit sapien quis lacinia. Suspendisse id facilisis leo. Nunc iaculis pulvinar metus, vitae viverra est. Nunc justo ex, volutpat iaculis eros id, interdum volutpat ipsum. Maecenas diam urna, cursus non diam et, lacinia mollis lorem. Etiam vel quam non arcu cursus condimentum nec non ipsum.\n\nProin ornare odio quis aliquet venenatis. In sit amet convallis ipsum. Cras arcu ligula, euismod ac tellus non, rhoncus ornare leo. Donec enim sem, consequat a erat vel, euismod pellentesque ligula. Sed eu hendrerit diam, sed sagittis lectus. Aliquam erat volutpat. Nulla vitae mi aliquet, ultricies neque sed, fringilla nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis at rhoncus tortor. Cras lectus enim, interdum sed iaculis eget, hendrerit id nulla. Etiam in sem laoreet, hendrerit mi sed, posuere elit.\n\nVestibulum convallis semper consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce commodo magna urna, eu pulvinar massa luctus vitae. Etiam euismod odio ac lacus dictum pellentesque. Proin imperdiet arcu in turpis fringilla efficitur. Curabitur quis elit nec leo luctus sollicitudin. Duis a tortor sed turpis ultrices ornare. Integer condimentum ante vitae enim mollis porttitor. Duis turpis enim, pulvinar at lorem rutrum, laoreet luctus lacus. Duis vitae sapien ultrices, suscipit nisi nec, porttitor sem. Nulla vitae lobortis libero. Donec tincidunt, neque in mattis sagittis, mi ante maximus felis, id vehicula urna nulla eu ex. Nullam dapibus a eros in feugiat. Sed sodales eros eget dui sagittis tempus. Etiam et fermentum lorem. Ut eu tincidunt tellus. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.734589"], ["updated_at", "2018-11-22 17:50:50.734589"]]
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 8"], ["body", "\n\nPraesent interdum, arcu at dictum interdum, ipsum velit porta tellus, ac malesuada ante erat et velit. Pellentesque a convallis mi. Quisque iaculis fermentum suscipit. In ut lectus pretium, varius nisl vitae, suscipit dui. Fusce eros est, viverra id leo at, finibus tempus erat. Pellentesque ut imperdiet nulla. Cras dictum erat et augue sodales, nec auctor arcu ultrices. Vivamus ac commodo leo. Nam urna massa, facilisis eu ipsum ut, finibus facilisis leo. Cras imperdiet metus eu erat pharetra tincidunt.\n\nIn fringilla faucibus ex, accumsan aliquet est pretium ut. Etiam nunc nisl, dictum vel nibh a, dignissim rhoncus lacus. Ut lobortis sodales mauris elementum varius. In condimentum eros id metus fermentum, et condimentum nibh dapibus. Ut semper, justo vitae mollis maximus, ligula nisi tincidunt nulla, sit amet mollis justo urna eu mauris. Morbi tincidunt, quam quis tempor dignissim, mi dolor convallis neque, accumsan ullamcorper metus purus non mauris. Vivamus ipsum est, efficitur non volutpat non, viverra in odio. Curabitur id suscipit leo.\n\nAenean nec metus nec velit mollis vulputate non at tellus. Etiam vitae cursus magna, non facilisis mauris. Duis non nisi luctus tellus venenatis sagittis eu vitae ex. Sed ut vehicula eros. Proin in aliquet orci, sed tincidunt felis. Cras vel pellentesque libero, eget aliquam tortor. Quisque porta scelerisque diam in posuere. In sit amet urna ligula. Nunc tempus orci ullamcorper, facilisis augue eu, imperdiet ex. Nullam hendrerit ex purus, auctor convallis augue blandit suscipit. Mauris ac venenatis augue. Phasellus faucibus rhoncus quam sed ullamcorper. Ut ornare fringilla felis, non rutrum leo lacinia vitae. In hac habitasse platea dictumst.\n\nProin gravida posuere leo ut bibendum. Sed egestas, neque quis lobortis condimentum, diam turpis rutrum dui, nec laoreet dolor urna nec purus. Nam ac suscipit lectus, non sodales nunc. Vestibulum vel augue diam. Aenean est nibh, volutpat sit amet posuere a, faucibus eget libero. Proin facilisis lacus nulla, ultricies suscipit tellus mattis ullamcorper. Quisque in orci vel quam bibendum commodo eu in elit. Etiam ut dui vitae ex euismod tristique. Nunc at lacus augue. Sed facilisis dictum erat non vestibulum. Aliquam vel sodales lectus. In et ligula a sem posuere iaculis vitae eget turpis. Suspendisse velit massa, placerat non scelerisque nec, hendrerit non eros. Nunc lorem risus, aliquam ac urna in, pulvinar tristique ante. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.752728"], ["updated_at", "2018-11-22 17:50:50.752728"]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 9"], ["body", "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat quam bibendum semper ultrices. Etiam condimentum sed dolor sed rutrum. Pellentesque sed condimentum tellus. Etiam molestie libero vitae metus semper dapibus. Pellentesque malesuada, urna non accumsan euismod, turpis tellus blandit nulla, id hendrerit mi mauris sed lectus. Nunc bibendum pretium ipsum. Aenean eu mi commodo, commodo metus et, mattis ligula. Donec a placerat dui. Suspendisse bibendum sed elit sit amet hendrerit. Phasellus sodales pretium ullamcorper. Vestibulum placerat finibus lorem laoreet lobortis. Aliquam sed fermentum velit. Phasellus pellentesque blandit molestie. Praesent dapibus sem non fermentum mollis.\n\nVivamus neque lorem, pulvinar vitae venenatis consequat, consectetur eget nibh. Proin sed enim purus. Cras eget cursus nibh, sit amet efficitur ex. Fusce sapien libero, imperdiet ut finibus dictum, sollicitudin ut erat. Proin vel mauris quam. Duis ultricies nisi in luctus vestibulum. Etiam ornare interdum libero.\n\nFusce rhoncus porttitor ligula, quis dignissim dolor eleifend et. Aliquam erat volutpat. Duis id vestibulum lacus. Proin aliquam ornare ultrices. Morbi vulputate hendrerit sapien quis lacinia. Suspendisse id facilisis leo. Nunc iaculis pulvinar metus, vitae viverra est. Nunc justo ex, volutpat iaculis eros id, interdum volutpat ipsum. Maecenas diam urna, cursus non diam et, lacinia mollis lorem. Etiam vel quam non arcu cursus condimentum nec non ipsum.\n\nProin ornare odio quis aliquet venenatis. In sit amet convallis ipsum. Cras arcu ligula, euismod ac tellus non, rhoncus ornare leo. Donec enim sem, consequat a erat vel, euismod pellentesque ligula. Sed eu hendrerit diam, sed sagittis lectus. Aliquam erat volutpat. Nulla vitae mi aliquet, ultricies neque sed, fringilla nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis at rhoncus tortor. Cras lectus enim, interdum sed iaculis eget, hendrerit id nulla. Etiam in sem laoreet, hendrerit mi sed, posuere elit.\n\nVestibulum convallis semper consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce commodo magna urna, eu pulvinar massa luctus vitae. Etiam euismod odio ac lacus dictum pellentesque. Proin imperdiet arcu in turpis fringilla efficitur. Curabitur quis elit nec leo luctus sollicitudin. Duis a tortor sed turpis ultrices ornare. Integer condimentum ante vitae enim mollis porttitor. Duis turpis enim, pulvinar at lorem rutrum, laoreet luctus lacus. Duis vitae sapien ultrices, suscipit nisi nec, porttitor sem. Nulla vitae lobortis libero. Donec tincidunt, neque in mattis sagittis, mi ante maximus felis, id vehicula urna nulla eu ex. Nullam dapibus a eros in feugiat. Sed sodales eros eget dui sagittis tempus. Etiam et fermentum lorem. Ut eu tincidunt tellus. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.764807"], ["updated_at", "2018-11-22 17:50:50.764807"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "Lorem ipsum 10"], ["body", "\n\nPraesent interdum, arcu at dictum interdum, ipsum velit porta tellus, ac malesuada ante erat et velit. Pellentesque a convallis mi. Quisque iaculis fermentum suscipit. In ut lectus pretium, varius nisl vitae, suscipit dui. Fusce eros est, viverra id leo at, finibus tempus erat. Pellentesque ut imperdiet nulla. Cras dictum erat et augue sodales, nec auctor arcu ultrices. Vivamus ac commodo leo. Nam urna massa, facilisis eu ipsum ut, finibus facilisis leo. Cras imperdiet metus eu erat pharetra tincidunt.\n\nIn fringilla faucibus ex, accumsan aliquet est pretium ut. Etiam nunc nisl, dictum vel nibh a, dignissim rhoncus lacus. Ut lobortis sodales mauris elementum varius. In condimentum eros id metus fermentum, et condimentum nibh dapibus. Ut semper, justo vitae mollis maximus, ligula nisi tincidunt nulla, sit amet mollis justo urna eu mauris. Morbi tincidunt, quam quis tempor dignissim, mi dolor convallis neque, accumsan ullamcorper metus purus non mauris. Vivamus ipsum est, efficitur non volutpat non, viverra in odio. Curabitur id suscipit leo.\n\nAenean nec metus nec velit mollis vulputate non at tellus. Etiam vitae cursus magna, non facilisis mauris. Duis non nisi luctus tellus venenatis sagittis eu vitae ex. Sed ut vehicula eros. Proin in aliquet orci, sed tincidunt felis. Cras vel pellentesque libero, eget aliquam tortor. Quisque porta scelerisque diam in posuere. In sit amet urna ligula. Nunc tempus orci ullamcorper, facilisis augue eu, imperdiet ex. Nullam hendrerit ex purus, auctor convallis augue blandit suscipit. Mauris ac venenatis augue. Phasellus faucibus rhoncus quam sed ullamcorper. Ut ornare fringilla felis, non rutrum leo lacinia vitae. In hac habitasse platea dictumst.\n\nProin gravida posuere leo ut bibendum. Sed egestas, neque quis lobortis condimentum, diam turpis rutrum dui, nec laoreet dolor urna nec purus. Nam ac suscipit lectus, non sodales nunc. Vestibulum vel augue diam. Aenean est nibh, volutpat sit amet posuere a, faucibus eget libero. Proin facilisis lacus nulla, ultricies suscipit tellus mattis ullamcorper. Quisque in orci vel quam bibendum commodo eu in elit. Etiam ut dui vitae ex euismod tristique. Nunc at lacus augue. Sed facilisis dictum erat non vestibulum. Aliquam vel sodales lectus. In et ligula a sem posuere iaculis vitae eget turpis. Suspendisse velit massa, placerat non scelerisque nec, hendrerit non eros. Nunc lorem risus, aliquam ac urna in, pulvinar tristique ante. "], ["read", "f"], ["created_at", "2018-11-22 17:50:50.775044"], ["updated_at", "2018-11-22 17:50:50.775044"]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-11-22 18:51:17 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmailsController#index as HTML
+  Rendering emails/index.html.erb within layouts/application
+  [1m[36mEmail Load (0.1ms)[0m  [1m[34mSELECT "emails".* FROM "emails"[0m
+  Rendered emails/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 3428ms (Views: 3423.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/emails/1" for 127.0.0.1 at 2018-11-22 18:51:26 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[36mEmail Load (0.4ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (1.6ms)
+  Rendered emails/show.js.erb (4.2ms)
+Completed 200 OK in 17ms (Views: 9.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/emails/2" for 127.0.0.1 at 2018-11-22 18:51:27 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"2"}
+  [1m[36mEmail Load (0.3ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (1.5ms)
+  Rendered emails/show.js.erb (4.7ms)
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/emails/9" for 127.0.0.1 at 2018-11-22 18:51:29 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"9"}
+  [1m[36mEmail Load (0.1ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.4ms)
+  Rendered emails/show.js.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/emails/7" for 127.0.0.1 at 2018-11-22 18:51:31 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"7"}
+  [1m[36mEmail Load (0.2ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.4ms)
+  Rendered emails/show.js.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emails/6" for 127.0.0.1 at 2018-11-22 18:51:31 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"6"}
+  [1m[36mEmail Load (0.1ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.5ms)
+  Rendered emails/show.js.erb (1.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/emails/5" for 127.0.0.1 at 2018-11-22 18:51:32 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mEmail Load (0.1ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.4ms)
+  Rendered emails/show.js.erb (1.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/emails/5" for 127.0.0.1 at 2018-11-22 18:51:33 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mEmail Load (0.2ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (1.5ms)
+  Rendered emails/show.js.erb (4.6ms)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emails/5" for 127.0.0.1 at 2018-11-22 18:51:33 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mEmail Load (0.3ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.4ms)
+  Rendered emails/show.js.erb (1.0ms)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/emails/5" for 127.0.0.1 at 2018-11-22 18:51:34 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mEmail Load (0.2ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (1.5ms)
+  Rendered emails/show.js.erb (3.8ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emails/5" for 127.0.0.1 at 2018-11-22 18:51:34 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mEmail Load (0.1ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.4ms)
+  Rendered emails/show.js.erb (4.3ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/emails/1" for 127.0.0.1 at 2018-11-22 18:51:35 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[36mEmail Load (0.3ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.4ms)
+  Rendered emails/show.js.erb (1.2ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/emails/2" for 127.0.0.1 at 2018-11-22 18:51:35 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"2"}
+  [1m[36mEmail Load (0.2ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (1.2ms)
+  Rendered emails/show.js.erb (3.5ms)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emails/10" for 127.0.0.1 at 2018-11-22 18:51:37 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"10"}
+  [1m[36mEmail Load (0.2ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.4ms)
+  Rendered emails/show.js.erb (1.1ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emails/new" for 127.0.0.1 at 2018-11-22 18:51:38 +0100
+Processing by EmailsController#new as HTML
+  Rendering emails/new.html.erb within layouts/application
+  Rendered emails/_form.html.erb (39.5ms)
+  Rendered emails/new.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/emails" for 127.0.0.1 at 2018-11-22 18:51:46 +0100
+Processing by EmailsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B8SvTLOAXkvTD3kcvLyimJ2hJdojoe+/vZYDkhtUf10k6fXjW8S3KoYUwIW2tK1zePVjlPS5XT3YmFknnIz9dg==", "email"=>{"object"=>"gfhgjklk", "body"=>"fghjkl;", "read"=>"1"}, "commit"=>"Create Email"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "emails" ("object", "body", "read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["object", "gfhgjklk"], ["body", "fghjkl;"], ["read", "t"], ["created_at", "2018-11-22 17:51:46.677262"], ["updated_at", "2018-11-22 17:51:46.677262"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/emails/11
+Completed 302 Found in 10ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/emails/11" for 127.0.0.1 at 2018-11-22 18:51:46 +0100
+Processing by EmailsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEmail Load (0.1ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/emails
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/emails" for 127.0.0.1 at 2018-11-22 18:51:46 +0100
+Processing by EmailsController#index as HTML
+  Rendering emails/index.html.erb within layouts/application
+  [1m[36mEmail Load (0.1ms)[0m  [1m[34mSELECT "emails".* FROM "emails"[0m
+  Rendered emails/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/emails/11" for 127.0.0.1 at 2018-11-22 18:51:49 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"11"}
+  [1m[36mEmail Load (0.2ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.8ms)
+  Rendered emails/show.js.erb (2.0ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emails/10" for 127.0.0.1 at 2018-11-22 18:51:51 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"10"}
+  [1m[36mEmail Load (0.1ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.4ms)
+  Rendered emails/show.js.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/emails/10" for 127.0.0.1 at 2018-11-22 18:51:54 +0100
+Processing by EmailsController#destroy as JS
+  Parameters: {"id"=>"10"}
+  [1m[36mEmail Load (0.3ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "emails" WHERE "emails"."id" = ?[0m  [["id", 10]]
+  [1m[35m (35.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/emails
+Completed 200 OK in 44ms (ActiveRecord: 37.1ms)
+
+
+Started GET "/emails" for 127.0.0.1 at 2018-11-22 18:51:55 +0100
+Processing by EmailsController#index as HTML
+  Rendering emails/index.html.erb within layouts/application
+  [1m[36mEmail Load (0.4ms)[0m  [1m[34mSELECT "emails".* FROM "emails"[0m
+  Rendered emails/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-22 18:52:48 +0100
+Processing by EmailsController#index as HTML
+  Rendering emails/index.html.erb within layouts/application
+  [1m[36mEmail Load (0.2ms)[0m  [1m[34mSELECT "emails".* FROM "emails"[0m
+  Rendered emails/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emails/1" for 127.0.0.1 at 2018-11-22 18:52:51 +0100
+Processing by EmailsController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[36mEmail Load (0.2ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering emails/show.js.erb
+  Rendered layouts/_show.html.erb (0.4ms)
+  Rendered emails/show.js.erb (1.0ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
